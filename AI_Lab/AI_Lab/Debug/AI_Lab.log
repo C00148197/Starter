@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\source.cpp(43): warning C4244: '=': conversion from 'float' to 'sf::Int32', possible loss of data
+  AI_Lab.vcxproj -> C:\Users\gameuser\Desktop\AI\AI\AI_Lab\Debug\AI_Lab.exe
+  AI_Lab.vcxproj -> C:\Users\gameuser\Desktop\AI\AI\AI_Lab\Debug\AI_Lab.pdb (Partial PDB)
