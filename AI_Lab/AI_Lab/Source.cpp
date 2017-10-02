@@ -4,18 +4,43 @@
 using namespace std;
 
 
-sf::Sprite testSprite; //sprite used
-sf::Texture testTexture; //texture used
+sf::Sprite playerSprite; //sprite used
+sf::Texture playerTexture; //texture used
+
+sf::Sprite aiSprite; //sprite used
+sf::Texture aiTexture; //texture used
 
 
 sf::Time inputTime; //timer for controller input repeat to be implemented.
 sf::Int32 msec = 0; //holds time for cont input
 
+const float maxVelo = 3.5f;
+
+
+
+const int noOfEnemies = 2; //the max number of enemies in the game
+Enemy enemy[noOfEnemies]; //enemy object array
+Enemy *pEnemy = &enemy[0];  //pointer to enemy
+
+//
+Player player; //player object
+Player *pPlayer = &player; //pointer to player
+
+							//std::shared_ptr<Player> player(new Player(0, true, 5000)); //addy for player, problem using atm, using raw pointer for the moment until solved
+//Player player(0, true, 1000); //player object
+//Player *pPlayer = &player; //pointer to player
+
 
 int main()
 {
 
-	sf::RenderWindow window(sf::VideoMode(1080, 960), "zippy zoo" /*, sf::Style::Fullscreen*/);
+	for (size_t i = 0; i < noOfEnemies; i++) //intialise all enemies
+	{
+		enemy[i].initialise(i); //enemies get passed which enemy they are in the array
+	}
+	player.initialise(0);
+
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "zippy zoo" /*, sf::Style::Fullscreen*/);
 	window.setVerticalSyncEnabled(true);
 	//Screens Setup
 	
@@ -28,6 +53,12 @@ int main()
 	{
 		//INPUT LOOP
 		sf::Event e;
+
+
+
+
+
+
 		while (window.pollEvent(e))
 		{
 			//If the X button on the window is press, close the window
@@ -49,8 +80,29 @@ int main()
 			//window 
 			window.clear();
 
+
+
+
+			for (size_t i = 0; i < noOfEnemies; i++)
+			{
+				enemy[i].update(window, i); //update enemy objects
+			}
+
+			player.update(window, e);
+
 			//UPDATE CALL###
 			//call methods
+			//aiSprite.setScale(sf::Vector2f(0.3f, 0.3f));
+			//aiTexture.loadFromFile("ai.png"); //load the help screen
+			//aiSprite.setTexture(aiTexture);
+			//aiSprite.setPosition(400, 700);
+			//window.draw(aiSprite); //draw help screen
+
+			//
+			//playerTexture.loadFromFile("player.png"); //load the help screen
+			//playerSprite.setTexture(playerTexture);
+			//playerSprite.setPosition(200, 700);
+			//window.draw(playerSprite); //draw help screen
 		
 			elapsedTime = sf::Time::Zero;
 			//Display current frame
@@ -79,16 +131,16 @@ int main()
 //
 //	if (gameState == GameState::Help)
 //	{
-//		testTexture.loadFromFile("help.png"); //load the help screen
-//		testSprite.setTexture(testTexture);
-//		window.draw(testSprite); //draw help screen
+//		playerTexture.loadFromFile("help.png"); //load the help screen
+//		playerSprite.setTexture(playerTexture);
+//		window.draw(playerSprite); //draw help screen
 //	}
 //
 //	if (gameState == GameState::GameOver)
 //	{
-//		testTexture.loadFromFile("gameover.png"); //load and draw gameover screen
-//		testSprite.setTexture(testTexture);
-//		window.draw(testSprite);
+//		playerTexture.loadFromFile("gameover.png"); //load and draw gameover screen
+//		playerSprite.setTexture(playerTexture);
+//		window.draw(playerSprite);
 //		retry.initialize(0, true, player, gameState); //update retry button
 //		retry.update(0, 0, 0, gameState, window, player, 0);
 //

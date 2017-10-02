@@ -5,3 +5,5 @@
 #include "SFML\Window.hpp"
 #include <iostream>
 #include <time.h>
+#include "Enemy.h"
+#include "player.h"
