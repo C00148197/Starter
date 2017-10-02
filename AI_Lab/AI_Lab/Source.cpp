@@ -88,7 +88,7 @@ int main()
 				enemy[i].update(window, i); //update enemy objects
 			}
 
-			player.update(window, e);
+			player.update(window, e, inputTime);
 
 			//UPDATE CALL###
 			//call methods

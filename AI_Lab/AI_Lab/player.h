@@ -17,7 +17,7 @@ public:
 	void initialise(int i);
 
 
-	void update(sf::RenderWindow& window, sf::Event e);
+	void update(sf::RenderWindow& window, sf::Event e, sf::Time t);
 
 
 	sf::Vector2f getPosition();
@@ -33,6 +33,9 @@ public:
 private:
 	sf::Vector2f maxVelo;
 	sf::Vector2f minVelo;
+	int minSpeed;
+	int maxSpeed;
+	float angle;
 	sf::Sprite m_image; //Player sprite
 	sf::Texture m_texture;  //Player texture
 	int m_size;
@@ -46,6 +49,7 @@ private:
 	int rPath; //random path
 	sf::Vector2f m_velocity; //Player velocity
 	int PlayerType; //fed a random distrubution to see if Player is type 1, 2 or 3
+	float speed;
 };
 
 #endif

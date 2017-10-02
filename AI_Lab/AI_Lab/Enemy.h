@@ -44,6 +44,10 @@ private:
 	int rPath; //random path
 	sf::Vector2f m_velocity; //enemy velocity
 	int enemyType; //fed a random distrubution to see if enemy is type 1, 2 or 3
+	float angle;
+	float minSpeed;
+	float maxSpeed;
+	float speed;
 };
 
 #endif
