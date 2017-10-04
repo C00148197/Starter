@@ -13,7 +13,7 @@ void Player::initialise(int i)
 	m_position = sf::Vector2f(200, 700); //offset each Player (formerly i* 86) CONST
 	m_isAlive = false; //for test only
 	m_image.setOrigin(sf::Vector2f(m_image.getGlobalBounds().width / 2.0f, (m_image.getGlobalBounds().height / 2.0f)) );
-	speed = 2;
+	speed = 0;
 	maxVelo = sf::Vector2f(0, -2);
 	minVelo = sf::Vector2f(0, 0);
 	angle = 0;
@@ -105,13 +105,7 @@ void Player::update(sf::RenderWindow& window, sf::Event e, sf::Time t)
 		angle += 360;
 	}
 
-	cout << "angle: " << angle << endl;
-	cout << "angleSPR: " << m_image.getRotation() << endl;
 
-
-	cout << "x: " << std::to_string(m_velocity.y) << " y: " << std::to_string(m_velocity.y)  << endl;
-
-	cout << "speed: " << speed << endl;
 
 	//m_position += m_velocity;
 

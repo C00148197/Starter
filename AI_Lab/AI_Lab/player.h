@@ -31,6 +31,7 @@ public:
 	void setVelocity(sf::Vector2f velocity);
 
 private:
+	float radius = 50;
 	sf::Vector2f maxVelo;
 	sf::Vector2f minVelo;
 	int minSpeed;

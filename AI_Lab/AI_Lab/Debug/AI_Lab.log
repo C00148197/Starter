@@ -1,5 +1,7 @@
 ﻿  Enemy.cpp
-c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(68): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(173): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\ai\ai\ai_lab\ai_lab\enemy.cpp(174): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   AI_Lab.vcxproj -> C:\Users\gameuser\Desktop\AI\AI\AI_Lab\Debug\AI_Lab.exe
   AI_Lab.vcxproj -> C:\Users\gameuser\Desktop\AI\AI\AI_Lab\Debug\AI_Lab.pdb (Partial PDB)

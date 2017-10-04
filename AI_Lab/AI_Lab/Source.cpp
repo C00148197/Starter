@@ -18,7 +18,7 @@ const float maxVelo = 3.5f;
 
 
 
-const int noOfEnemies = 2; //the max number of enemies in the game
+const int noOfEnemies = 3; //the max number of enemies in the game
 Enemy enemy[noOfEnemies]; //enemy object array
 Enemy *pEnemy = &enemy[0];  //pointer to enemy
 
@@ -85,7 +85,7 @@ int main()
 
 			for (size_t i = 0; i < noOfEnemies; i++)
 			{
-				enemy[i].update(window, i); //update enemy objects
+				enemy[i].update(window, i, player); //update enemy objects
 			}
 
 			player.update(window, e, inputTime);
